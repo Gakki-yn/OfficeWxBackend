@@ -38,7 +38,7 @@ public class JwtUtil {
         return userId;
     }
     //校验令牌的有效性
-    public void verifierToekn(String token){
+    public void verifierToken(String token){
         Algorithm algorithm=Algorithm.HMAC256(secret);
         JWTVerifier verifier=JWT.require(algorithm).build();
         verifier.verify(token);
