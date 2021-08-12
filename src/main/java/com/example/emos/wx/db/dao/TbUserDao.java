@@ -1,9 +1,12 @@
 package com.example.emos.wx.db.dao;
 
-import com.example.emos.wx.db.pojo.TbUser;
 import org.apache.ibatis.annotations.Mapper;
 
-@Mapper
-public interface TbUserDao {
+import java.util.HashMap;
 
+@Mapper
+public  interface TbUserDao {
+   public  boolean haveRootUser();
+   public int insert(HashMap param);
+   public  Integer searchIdByOpenId(String s);
 }
