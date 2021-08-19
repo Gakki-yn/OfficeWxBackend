@@ -48,10 +48,20 @@ public class UserController {
         return R.ok("用户注册成功").put("token", token).put("permission", permsSet);
     }
 
+    @PostMapping("/login")
+    @ApiOperation("登陆系统")
+    public R login(@Valid @RequestBody LoginForm form){
+        int id=userService.login(form.getCode());
+        String token=jwtUtil.createToken(id);
+        saveCacheToken(token,id);
+        Set<String> permsSet = userService.searchUserPermissions(id);
+        return R.ok("登陆成功").put("token",token).put("permission",permsSet);
+    }
 
 
 
     private void saveCacheToken(String token,int userId){
         redisTemplate.opsForValue().set(token,userId+"",cacheExpire, TimeUnit.DAYS);
+
     }
 }
