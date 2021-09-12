@@ -1,5 +1,6 @@
 package com.example.emos.wx.service;
 
+import com.example.emos.wx.db.pojo.TbUser;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
@@ -12,5 +13,8 @@ public interface UserService {
     public Set<String> searchUserPermissions(int userId);
 
     public Integer login(String code);
+
+    public TbUser searchById(int userId);
+
 
 }
