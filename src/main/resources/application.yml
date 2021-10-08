@@ -65,7 +65,10 @@ emos:
     expire: 5
     #令牌缓存时间（天数）
     cache-expire: 10
+  face:
+    createFaceModelUrl: http://CentOS的IP地址:3000/create_face_model
+    checkinUrl: http://CentOS的IP地址:3000/checkin
 
 wx:
-  app_id:
-  app-secret:
+  app_id: #: 微信小程序APPID
+  app-secret: #微信小程序密钥
