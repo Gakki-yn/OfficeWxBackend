@@ -4,8 +4,8 @@ import java.io.Serializable;
 import lombok.Data;
 
 /**
- * sys_config
- * @author 
+ * tb_city
+ * @author
  */
 @Data
 public class TbCity implements Serializable {
@@ -15,24 +15,14 @@ public class TbCity implements Serializable {
     private Integer id;
 
     /**
-     * 参数名
+     * 城市名称
      */
-    private String paramKey;
+    private String city;
 
     /**
-     * 参数值
+     * 拼音简称
      */
-    private String paramValue;
-
-    /**
-     * 状态
-     */
-    private Byte status;
-
-    /**
-     * 备注
-     */
-    private String remark;
+    private String code;
 
     private static final long serialVersionUID = 1L;
 }

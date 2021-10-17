@@ -5,7 +5,7 @@ import lombok.Data;
 
 /**
  * sys_config
- * @author 
+ * @author
  */
 @Data
 public class SysConfig implements Serializable {
@@ -27,7 +27,7 @@ public class SysConfig implements Serializable {
     /**
      * 状态
      */
-    private Byte status;
+    private Boolean status;
 
     /**
      * 备注

@@ -1,11 +1,12 @@
 package com.example.emos.wx.db.pojo;
 
 import java.io.Serializable;
+import java.util.Date;
 import lombok.Data;
 
 /**
- * sys_config
- * @author 
+ * tb_workday
+ * @author
  */
 @Data
 public class TbWorkday implements Serializable {
@@ -15,24 +16,9 @@ public class TbWorkday implements Serializable {
     private Integer id;
 
     /**
-     * 参数名
+     * 日期
      */
-    private String paramKey;
-
-    /**
-     * 参数值
-     */
-    private String paramValue;
-
-    /**
-     * 状态
-     */
-    private Byte status;
-
-    /**
-     * 备注
-     */
-    private String remark;
+    private Date date;
 
     private static final long serialVersionUID = 1L;
 }
