@@ -9,6 +9,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,6 +27,9 @@ public class CheckinController {
     @Autowired
     private CheckinService checkinService;
 
+    @Value("${emos.image-folder}")
+    private String imageFolder;
+
     @GetMapping("/validCanCheckIn")
     @ApiOperation("查看用户今天是否可以签到")
     public R validCanCheckIn(@RequestHeader("token") String token){
@@ -33,6 +37,7 @@ public class CheckinController {
         String result=checkinService.validCanCheckIn(userId, DateUtil.today());
         return R.ok(result);
     }
+
 
 
 }
